@@ -1,0 +1,5 @@
+/vendor
+/node_modules
+/solid-principles.md
+/scope.md
+/yarn-offline-cache

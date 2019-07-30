@@ -1,0 +1,1 @@
+<p>License Terms</p>

@@ -1,0 +1,12 @@
+{
+    "autoload": {
+        "classmap": [
+            "./"
+        ],
+        "files": ["core/helpers.php"]
+    },
+    "require": {
+        "nesbot/carbon": "^2.20",
+        "fzaninotto/faker": "^1.8"
+    }
+}

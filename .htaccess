@@ -1,0 +1,22 @@
+server {
+root /var/www/public_html;
+
+# Add index.php to the list if you are using PHP
+index index.php index.html index.htm index.nginx-debian.html;
+
+server_name www.YourWebsitw.com;
+
+location / {
+try_files $uri $uri/ @extensionless-php;
+index index.html index.htm index.php;
+}
+
+location ~ \.php$ {
+include snippets/fastcgi-php.conf;
+fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+}
+
+location @extensionless-php {
+rewrite ^(.*)$ $1.php last;
+}
+} 

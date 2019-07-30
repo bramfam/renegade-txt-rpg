@@ -1,0 +1,3 @@
+## The target is that we can get the rank of a character compared to the others..
+
+# Write Tests maybe
