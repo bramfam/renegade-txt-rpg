@@ -1,4 +1,5 @@
 <?php
+
 require_once("constants.php");
 // you can now then use the CONSTANTS for the app here..
 
@@ -13,6 +14,5 @@ require_once("db_methods.php");
 require_once("account.php");
 // remember : send_mail is the module be included when sending email
 require_once("send_mail.php");
-
 
 // module_is_found_checker('Account');

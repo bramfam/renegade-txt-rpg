@@ -1,7 +1,7 @@
 <?php
 /*refers to the account / owner / the users table...*/
+namespace Core\Functions ; 
 ini_set('memory_limit', '-1');
-
 class Account extends DBMethods { 
 
 	public static function register($full_name, $email, $pwd )

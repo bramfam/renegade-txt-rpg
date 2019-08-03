@@ -1,5 +1,8 @@
 <?php include_once "partials/header.php"?>
-<?php include_once "partials/nav.php"?>
+<?php 
+session_start();
+include_once "partials/nav.php"
+?>
 
 <section id="body-content">
 	<div id="container" class="">
@@ -7,7 +10,7 @@
 			<div class="">
 				<h3 class="text-center mb-6 text-4xl font-serif">Register Account</h3>
 				<div class="w-full user-account-output font-sans">
-					<section id="registerUser" class="flex items-center justify-center">
+					<section id="fformUser" class="flex items-center justify-center">
 						<form class="max-w-half w-full" id="registerForm" action="register.php" method="POST">
 							<div class="input-group mb-4">
 								<input placeholder="Name" name="full_name" type="text" class="items-center text-black font-normal bg-inputcolor text-xl p-4 w-full">

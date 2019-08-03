@@ -1,5 +1,8 @@
 <?php
+namespace Core\Functions ; 
+
 // this contains the methods that will be queried into the DB 
+
 class DBMethods {
 	
 	public static function find_all($table) {
@@ -17,7 +20,7 @@ class DBMethods {
 
 	function insert_to_db($email,$full_name,$password)
 	{
-		$query = 'INSERT INTO users	($full_name, $email, $password)
+		$query = 'INSERT INTO $table_name($full_name, $email, $password)
 		VALUES (:full_name, :email, :pwd)';
 		$statement = $db->prepare($query);
 		$statement->bindValue(':full_name', $full_name);
@@ -93,18 +96,13 @@ private function has_the_attribute($the_attribute) {
 
 
 
-protected function properties() {
-	
+protected function properties() {	
 	     //return get_object_vars();   
 	$properties = array();
-	
 	foreach(static::$db_table_fields as $db_field) {
-		
 		if(property_exists($this, $db_field)){
-			
 			$properties[$db_field] = $this->$db_field; 
 		}   
-		
 	} 
 	
 	return $properties;

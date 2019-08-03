@@ -7,6 +7,7 @@
     },
     "require": {
         "nesbot/carbon": "^2.20",
-        "fzaninotto/faker": "^1.8"
+        "fzaninotto/faker": "^1.8",
+        "chovanec/elo-rating": "dev-master"
     }
 }

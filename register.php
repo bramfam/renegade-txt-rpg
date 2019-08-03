@@ -6,15 +6,18 @@ start_registering();
 // queries to the db if email is found
 function checkIfEmailIsFound($email){
 // returns 1 or zero 
-// from db.php
-	
-	global $db;
-
-	var_dump($db);
-
-	// $sql = 'SELECT COUNT(Id) AS ItemsCount,	SUM ( CASE WHEN PriceRating = 'Expensive' THEN 1 ELSE 0 END ) 
-	// AS ExpensiveItemsCount FROM ItemSales';
-
+	global $db ;
+	$query = SELECT COUNT(*) FROM users where email = $email ; 
+	try {
+		$statement = $db->prepare($query);
+		$statement->execute();
+		$result = $statement->fetchAll();
+		$statement->closeCursor();
+		return $result;
+	} catch (PDOException $e) {
+		$error_message = $e->getMessage();
+		display_db_error($error_message);
+	}
 }
 
 function start_registering(){
@@ -30,45 +33,54 @@ Array ( [full_name] => Olga Grant [email] => mydomaqajy@mail.com [password] => P
 session_start();
 
 $email = $_POST['email'];
+
 $full_name = $_POST['full_name'];
+
 $pwd = $_POST['password'];
+
 $confirm_password = $_POST['confirm'];
 
+// if passed
 if (isset($email) && isset($full_name) && isset($pwd) && isset($confirm_password)) {
-
+// if password is not the same as confirm_password
 	if ($pwd != $confirm_password){
 			// take note that we would want to still put the form fields of the previous registration..
 		redirect('index.php');
-	}
+	}	
+
+	// if passwords are matched..
 	else {
 // returns 1 if email is found and 0 if it's not
-		$status = checkIfEmailIsFound($_POST['email']); 
+		$status = checkIfEmailIsFound($_POST['email']);
 
-		if ( $status == 1){
+		var_dump($status)  ;
+		// if ( $status == 1){
 	// if the email is found then check if email's account is activated or not.
-			print $status  ;
 	//  if it's activated already then send a proper response
-			$this->sendEmail(); 
+			// $this->sendEmail(); 
 	//  if it's not then send an email that he needs to verify his account.  change the activation status to active then go away.
 	// it's not found then send a proper response
 
 	// then check if the user's status is 0 if 
 	// then send a proper response to the user..
-		}
-	// if it's not
-		else {
-			send_mail($email,$status);
-			change_account_status();
-			Account::register($email,$full_name,$pwd);
-		}	
-		
-		echo $status;
-		echo "Registering now..";
 	}
+	// if it's not
+	/*else {
+		send_mail($email,$status);
+		change_account_status();
+		Account::register($email,$full_name,$pwd);
+	}	*/
+
+
 }
 else {
 	print "complete the form fields";
 }
+
+}
+
+function display_db_error(){
+	
 }
 
 function send_mail($email,$status){

@@ -8,7 +8,14 @@ import VueRouter from 'vue-router';
 
 import VModal from 'vuejs-modal';
 
-Vue.use(VModal);
+import confirm from 'vuejs-modal/lib/confirm.vue'
+
+
+Vue.use(VModal, {
+	modals : {
+		confirm 
+	}
+});
 
 
 $(function(){

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "bootstrap": "^4.3.1",
     "browser-sync": "^2.26.5",
     "browser-sync-webpack-plugin": "2.0.1",
     "cross-env": "^5.2.0",
@@ -23,10 +24,13 @@
     "vue-router": "^3.0.2",
     "vuejs-modal": "^0.0.3"
   },
-  "devDependencies": {
+  
+  "devDependencies": 
+  {
     "resolve-url-loader": "^2.3.1",
     "sass": "^1.22.3",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
   }
+
 }

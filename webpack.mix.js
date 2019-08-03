@@ -2,25 +2,24 @@ let mix = require('laravel-mix');
 let tailwindcss = require('tailwindcss');
 
 /*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel  Identical to mix.js(), but registers CoffeeScript compilation.
+|--------------------------------------------------------------------------
+| Mix Asset Management
+|--------------------------------------------------------------------------
+|
+| Mix provides a clean, fluent API for defining some Webpack build steps
+| for your Laravel  Identical to mix.js(), but registers CoffeeScript compilation.
 // mix.ts(src, output); <-- Tyapplication. By default, we are compiling the Sass
- | file for your application, as well as bundling up your JS files.
- |
- */
+| file for your application, as well as bundling up your JS files.
+|
+*/
 
-mix.js('./src/js/app.js', 'public/js')
-.sass('./src/scss/app.scss', 'public/css')
+mix.js('src/js/app.js', 'public/js')
+.sass('src/scss/app.scss', 'public/css')
 .setPublicPath('public')
 .options({
 	processCssUrls: false,
 	postCss: [ tailwindcss('./tailwind.config.js') ],
-})
-.browserSync('localhost:8200')
+});
 
 // Full API
 // mix.js(src, output);

@@ -9,11 +9,30 @@
 	</div>
 
 	<nav class="mr-24 -mt-1 font-sans">
-		<ul class="flex text-2xl">
+		<ul class="flex mt-6 text-2xl font-display">
+			<?php
+			// if there's a logged on user
+				if(isset($_SESSION["login"])) { 
+			?>
+
+		<!-- <ul class="flex text-2xl">
 			<a href="./register-account.php" class="bg-black pt-4 px-6 py-6 border-switchcolor border-2 hover:bg-switchcolor hover:text-white">
 				<li class="items-center text-center">Create a Free Account
 				</li>
 			</a >
-		</ul>
-	</nav>
+		</ul> -->
+		<li class="mr-6"><a href="/purchases">Purchases</a></li>
+		<li class="mr-6"><a href="/missions">Browse Missions</a></li>
+		<li class="mr-6"><a href="/factions">Factions</a></li>
+		<li class="mr-6"><a href="/account">Account</a></li>
+	</ul>
+</nav>
+
+<? 
+}
+else {
+
+} 
+?>
+<ul></ul>
 </header>

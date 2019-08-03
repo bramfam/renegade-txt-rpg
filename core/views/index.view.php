@@ -12,11 +12,12 @@
 				</figure>
 			</div>
 		</div>
+		
 		<user-option inline-template>
 			<section id="accountOption">
 				<div id="user-option" class="-mt-4">
 					<div class="flex w-full font-sans">		
-						<a id="registerOption" class="font-semibold p-4 w-1/6 text-xl font-sans mr-4 text-black bg-switchcolor text-center text-white">Browse Missions
+						<a href="browse-missions.php" id="registerOption" class="font-semibold p-4 w-1/6 text-xl font-sans mr-4 text-black bg-switchcolor text-center text-white">Browse Missions
 						</a>
 						<a id="loginOption" class="font-sans font-semibold bg-white w-1/6 text-xl p-4 text-black text-center w-1/6" href="./login.php">
 							Login

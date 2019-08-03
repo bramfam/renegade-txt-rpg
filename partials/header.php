@@ -2,7 +2,7 @@
 // maybe add this as a separate module..
 defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 // defining a site root the main directory of the project.
-defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'E:'.DS.'www'.DS.'php-projects'.DS.'myrtec');
+defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'E:'.DS.'www'.DS.'php-projects'.DS.'renegade');
 // the core/functions path.. 
 defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT.DS.'core'.DS.'functions');
 ?>
@@ -20,5 +20,5 @@ defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT.DS.'core'.DS
 	<link href="../public/css/app.css" rel="stylesheet">
 </head>
 <body class="bg-black text-white h-full">
-
+<div id="app">
 
