@@ -19,7 +19,8 @@ function loggedIn(){
         </form>'; 
         //if session is equal to 1, display  
         //Welcome, and whaterver their user name is 
-    }else{ 
+    }
+        else { 
         echo 'Welcome, '.$_SESSION['username']; 
     } 
 } 

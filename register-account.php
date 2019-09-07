@@ -3,7 +3,6 @@
 session_start();
 include_once "partials/nav.php"
 ?>
-
 <section id="body-content">
 	<div id="container" class="">
 		<div id="main-content">
@@ -35,11 +34,9 @@ include_once "partials/nav.php"
 							<div class="input-group mt-2 relative">
 								<p class="text-lg font-display">By signing up you agree to our <a href="./license-terms.php" class="text-white underline">license terms.</a></p>
 							</div>
-
 						</form>
 					</section>
 				</div>
-
 			</div>
 		</div>
 	</div>

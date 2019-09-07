@@ -7,7 +7,7 @@ First check to see if a user is logged in:
 session_start();
 if(!(isset($_SESSION['username'])))
 {
-    header("Location: index.php");
+	header("Location: index.php");
 }
 
 ?>
@@ -21,12 +21,12 @@ Then right in the body of the HTML add this:
 <input type="hidden" name="redirurl" value="<? echo $_SERVER['HTTP_REFERER']; ?>" />
 Then within your login file check for the URL session:
 
-    //check to see what page user first visited
-    if(isset($_SESSION['url'])) {
-        $url = $_SESSION['url'];
-    } else {
-        $url = "../index.php";
-    }
-    //redirect user to page they initially visited
-    header("Location: $url");
+//check to see what page user first visited
+if(isset($_SESSION['url'])) {
+$url = $_SESSION['url'];
+} else {
+$url = "../index.php";
+}
+//redirect user to page they initially visited
+header("Location: $url");
 That should fully answer your question.

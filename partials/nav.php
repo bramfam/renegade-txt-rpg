@@ -2,7 +2,7 @@
 	<div id="logo p-6 mt-4">
 		<div class="bg-white h-1"></div>
 		<a href="./">
-			<h3 class="text-5xl text-red-600 font-display uppercase">Renegades
+			<h3 class="hover:text-red-300 text-5xl text-red-600 font-display uppercase">Renegades
 			</h3>
 		</a>
 		<div class="bg-white h-1"></div>

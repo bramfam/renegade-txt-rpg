@@ -20,5 +20,5 @@ defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT.DS.'core'.DS
 	<link href="../public/css/app.css" rel="stylesheet">
 </head>
 <body class="bg-black text-white h-full">
-<div id="app">
+	<div id="app">
 

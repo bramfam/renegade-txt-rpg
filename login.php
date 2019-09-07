@@ -1,21 +1,13 @@
-<?php include_once "partials/header.php"?>
+<?php require_once "core/functions/init.php" ; ?>
+<?php include_once "partials/header.php"; ?>
 <?php
-
 // checks if user is already set up.
 // if wa'y naka set nga naka login -> redirect to the login page right away
-if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-/*header ("Location: login.php");
-header('Location: '.$_SERVER['PHP_SELF']);
-die;*/
-// print "test";
+if ((isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+	header('Location: '.$_SERVER['PHP_SELF']);
 }
-include_once "partials/nav.php"
-
-
+include_once "partials/nav.php";
 ?>
-
-
-
 <section id="body-content">
 	<div id="container" class="">
 		<div id="main-content">
@@ -23,23 +15,21 @@ include_once "partials/nav.php"
 				<h3 class="text-center mb-6 text-4xl font-serif">User Login</h3>
 				<div class="w-full user-account-output font-sans">
 					<section id="registerUser" class="flex items-center <!-- justify-center">
-						<?php 
-						require_once 'core/functions/init.php';
+						<?php 	
 						session_start();
-
-// if na send na siya
+// if na send na ang login request.
 						if (isset($_POST['pin']) && isset($_POST['password'])){
-// validate the way they want this ..
-							Account::login($_POST['pin'],$_POST['password']);
-// $this->loginUser($_POST['pin'],$_POST['password']);
-
+// validate the way they would want this ..
+							$this->loginUser($_POST['pin'],$_POST['password']);
+// Account::login($_POST['pin'],$_POST['password']);
+// print "logging in";
 						}
 						else {
-// print "Ok..";
-						}
+							print "cannot log in.";
+						}	
 						?> 
 
-						<form name="login" action="" class="max-w-half w-full" id="registerForm" method="POST">
+						<form name="login" action="." class="max-w-half w-full" id="registerForm" method="POST">
 							<div class="input-group mb-4">
 								<input placeholder="Username / Email " name="pin" type="text" class="items-center text-black font-normal bg-inputcolor text-xl p-4 w-full">
 							</div>		

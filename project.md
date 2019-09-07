@@ -18,9 +18,7 @@ To ship :
 	
 3. Browse Missions
 	- Daily Missions
-
 	- Find a mission depending on the faction u are in.
-		
 	~> You can only join a faction once you complete a challenge daily.
 
 	- Players who are in the higher ranks and who have lots of gold can pay to lead a faction.
@@ -114,6 +112,7 @@ Cbaracters :
 
 
 	+ points for a normal person 
+
 	+ points for 
 
 
@@ -141,7 +140,6 @@ App Flow :
 --------TOP MENU OPTIONS--------
 -> JOIN Faction /  CLUSTER / GROUP [Y/N/Ask Later[L]]? 
 => Enter cluster/group ID ? 3002
-
 
 
 ### Tables
@@ -212,8 +210,6 @@ App Flow :
 
 
 
-
-
 # Renegade RPG Game.
 
 # mechanics
@@ -268,7 +264,9 @@ Attributes to take notice :
 App Flow : 
 
 1. See the landing page.. 
+
 - User needs to have an account so that he can access the app.
+
 - After registering he needs 2 verify his email.
 
 
@@ -288,3 +286,8 @@ App Flow :
 -> JOIN Faction /  CLUSTER / GROUP [Y/N/Ask Later[L]]? 
 => Enter cluster/group ID ? 3002
 
+
+# Earning Money
+
+1. People can pay buying weapons only.
+	

@@ -14,18 +14,12 @@ class Character {
 	}
 
 	function returns_rank_of_the_character(){
-		// to rank a char.
-		// -> 1. get all the query
-	 //	->
 		do {
 			$rankSystem = 35.50; 
 			$rank += $rankSystem ; 
 		} 
 		while (expr);
-
-
-
-	}
+	}	
 
 	public static function display_characters_info()
 	{
