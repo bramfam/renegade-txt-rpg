@@ -28,11 +28,12 @@
 	</ul>
 </nav>
 
-<? 
+<?php
 }
 else {
 
 } 
 ?>
-<ul></ul>
+<ul>	
+</ul>
 </header>

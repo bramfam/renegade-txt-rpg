@@ -6,6 +6,5 @@
 <?php include_once "core/views/index.view.php"; ?>
 <!-- sidebar if there's any-->
 <?php include_once "partials/sidebar.php" ?>
-
 <!-- Footer -->
 <?php include_once "partials/footer.php" ?>

@@ -7,7 +7,6 @@ require_once('core/functions/init.php');
 
 // so loading the frontend now..
 
-require_once 'base.view.php';
-
+require_once "base.view.php";
 
 

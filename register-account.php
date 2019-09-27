@@ -1,7 +1,7 @@
 <?php include_once "partials/header.php"?>
 <?php 
 session_start();
-include_once "partials/nav.php"
+include_once "partials/nav.php";
 ?>
 <section id="body-content">
 	<div id="container" class="">

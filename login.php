@@ -1,35 +1,48 @@
-<?php require_once "core/functions/init.php" ; ?>
-<?php include_once "partials/header.php"; ?>
 <?php
+// initial files to load.. 
+require_once "core/functions/init.php" ;
+require_once "core/functions/constants.php";
+require_once "core/classes/fields.php";
+require_once "core/functions/validate.php";
+include_once "partials/header.php";
+require_once "core/functions/login_checker.php";
+// validating the login 2
+
 // checks if user is already set up.
-// if wa'y naka set nga naka login -> redirect to the login page right away
-if ((isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-	header('Location: '.$_SERVER['PHP_SELF']);
+check_if_user_is_already_logged_on() ; 
+/*
+$validate = new Validate() ; 	
+$fields = $validate->get_fields() ;
+*/
+
+/*if user tried to login*/
+if(isset($_POST['submit'])) {
+	$pin = filter_input(INPUT_POST, 'pin');
+	$field = filter_var($pin, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+	$password = filter_input(INPUT_POST, 'password');
+/**
+* Try to validate the request if the pin is ok..
+*/
+// $validate->pin('email',$pin);
+	Account::attempt_login($pin, $field, $password);  
+}
+/*if not*/
+else {
+	$username = "";
+	$password = "";
+	$the_message = "";
 }
 include_once "partials/nav.php";
 ?>
+
 <section id="body-content">
 	<div id="container" class="">
 		<div id="main-content">
 			<div class="">
 				<h3 class="text-center mb-6 text-4xl font-serif">User Login</h3>
 				<div class="w-full user-account-output font-sans">
-					<section id="registerUser" class="flex items-center <!-- justify-center">
-						<?php 	
-						session_start();
-// if na send na ang login request.
-						if (isset($_POST['pin']) && isset($_POST['password'])){
-// validate the way they would want this ..
-							$this->loginUser($_POST['pin'],$_POST['password']);
-// Account::login($_POST['pin'],$_POST['password']);
-// print "logging in";
-						}
-						else {
-							print "cannot log in.";
-						}	
-						?> 
-
-						<form name="login" action="." class="max-w-half w-full" id="registerForm" method="POST">
+					<section id="registerUser" class="flex items-center justify-center">
+						<form name="login" action="" class="max-w-half w-full" id="registerForm" method="POST">
 							<div class="input-group mb-4">
 								<input placeholder="Username / Email " name="pin" type="text" class="items-center text-black font-normal bg-inputcolor text-xl p-4 w-full">
 							</div>		
@@ -39,22 +52,21 @@ include_once "partials/nav.php";
 							</div>
 
 							<div class="input-group mt-4">
-								<button type="submit" class="hover:text-green text-white font-normal bg-buttoncolor text-xl p-4 w-full">
-									Submit
-								</button>
-							</div>
+								<input value="Enter" name="submit" type="submit" class="hover:text-green text-white font-normal bg-buttoncolor text-xl p-4 w-full">
+							</input>
+						</div>
 
-							<div class="input-group mt-2 relative">
-								<div class="flex">
-									<input class="h-4 w-4 mt-2 mr-1" type="checkbox">
-									<p class="text-xl font-sans">Remember me
-									</p>
-								</div>
+						<div class="input-group mt-2 relative">
+							<div class="flex">
+								<input class="h-4 w-4 mt-2 mr-1" type="checkbox">
+								<p class="text-xl font-sans">Remember me
+								</p>
 							</div>
-						</form>
-					</section>
-				</div>
+						</div>
+					</form>
+				</section>
 			</div>
 		</div>
 	</div>
+</div>
 </section>

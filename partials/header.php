@@ -1,11 +1,3 @@
-<?php 
-// maybe add this as a separate module..
-defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
-// defining a site root the main directory of the project.
-defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'E:'.DS.'www'.DS.'php-projects'.DS.'renegade');
-// the core/functions path.. 
-defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT.DS.'core'.DS.'functions');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,4 +13,3 @@ defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT.DS.'core'.DS
 </head>
 <body class="bg-black text-white h-full">
 	<div id="app">
-

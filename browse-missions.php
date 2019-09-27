@@ -1,19 +1,7 @@
 <?php
-if(!isset($_SESSION["login"])) {    
-	// notify("please login first");
-	header('Location:login.php');
-	exit; 
-} 
 
-else { 
-	$name = $_POST['name'] ?? 'nobody';
-	// is equivalent to 
-	if (isset($_POST['name'])) {   
-		$name = $_POST['name']; 
-	} else {  
-		$name = 'nobody';
-	}
-	// and 
-	$name = isset($_POST['name']) ? $_POST['name'] : 'nobody';
-}
+require "core/functions/login_checker.php";
+
+view_missions_if_there_is_a_logged_on_user() ; 
+
 ?>

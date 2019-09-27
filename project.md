@@ -2,7 +2,6 @@
 #  Finish this project by August 9, 2019.
 
 To ship :
-
 1. Login 
 	->
 	
@@ -205,10 +204,6 @@ App Flow :
 - id 
 - kingdom_id
 - member_count
-
-
-
-
 
 # Renegade RPG Game.
 

@@ -27,12 +27,11 @@ print_r($_POST);
 Array ( [full_name] => Olga Grant [email] => mydomaqajy@mail.com [password] => Pa$$w0rd! [confirm] => Pa$$w0rd! ) 
 */
 
-session_start();
 $email = $_POST['email'];
 $full_name = $_POST['full_name'];
 $pwd = $_POST['password'];
 $confirm_password = $_POST['confirm'];
-// if passed
+// if passed then 
 if (isset($email) && isset($full_name) && isset($pwd) && isset($confirm_password)) {
 // if password is not the same as confirm_password
 	if ($pwd != $confirm_password) {
@@ -50,18 +49,22 @@ if (isset($email) && isset($full_name) && isset($pwd) && isset($confirm_password
 			redirect('index') ; 
 		}
 		//  if he is available to be registered.. 
-		else if (is_bool($status) === true) {
+		elseif (is_bool($status) === true) {
 			// then send a mail to the user
-			send_mail($email, $status);
-			save_user($email) ; 
+
+			$this->send_email($email, $status); 
+
+			// send_mail($email, $status);
+
+			// save_user($email) ; 
+
+
 		}
 		else {
 			echo "Yes, this is a non boolean";
 		}
 	}
 }
-
-
 else {
 	print "complete the form fields";
 }

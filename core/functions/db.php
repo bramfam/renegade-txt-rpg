@@ -11,9 +11,9 @@ try {
 } catch (PDOException $e) {	
 	$error_message = $e->getMessage();
 	die($error_message);
-		// include('../core/views/db_error_connect.php');
+	// include('../core/views/db_error_connect.php');
 	exit();
-}	
+}		
 /*
 $database = new Database();
 $db =& $database;

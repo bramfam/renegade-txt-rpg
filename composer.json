@@ -8,6 +8,7 @@
     "require": {
         "nesbot/carbon": "^2.20",
         "fzaninotto/faker": "^1.8",
-        "chovanec/elo-rating": "dev-master"
+        "chovanec/elo-rating": "dev-master",
+        "phpmailer/phpmailer": "^6.0"
     }
 }

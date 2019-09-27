@@ -1,7 +1,7 @@
 <?php
 require_once('../vendor/fzaninotto/faker/src/autoload.php');
 require_once("connect.php");
-require_once("db.php");
+require_once("db.php");	
 require_once("db_methods.php");
 
 $faker = Faker\Factory::create();
