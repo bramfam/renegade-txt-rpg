@@ -21,4 +21,4 @@ function calls_the_user_if_there_is()
 	
 }
 
-var_dump(is_a_valid_login("zturner@example.net","email","secret"));
+// var_dump(is_a_valid_login("zturner@example.net","email","secret"));

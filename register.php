@@ -51,12 +51,8 @@ if (isset($email) && isset($full_name) && isset($pwd) && isset($confirm_password
 		//  if he is available to be registered.. 
 		elseif (is_bool($status) === true) {
 			// then send a mail to the user
-
-			$this->send_email($email, $status); 
-
-			// send_mail($email, $status);
-
-			// save_user($email) ; 
+			send_mail($email, $status);
+			save_user($email) ; 
 
 
 		}

@@ -4,7 +4,6 @@
 */
 require_once("constants.php");
 // you can now then use the CONSTANTS for the app here..
-
 /*returns the character `/` only */
 $uri = filter_input(INPUT_SERVER, 'REQUEST_URI',FILTER_SANITIZE_STRING);
 // get_required_files()files()once("./core/helpers.php");
